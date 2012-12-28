@@ -1,4 +1,6 @@
 Meudinheiro::Application.routes.draw do
+  resource :transactions
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
