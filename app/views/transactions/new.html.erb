@@ -1,2 +1,26 @@
-<h1>Transactions#new</h1>
-<p>Find me in app/views/transactions/new.html.erb</p>
+
+<%= form_for @transaction, :html => { :class => "form-horizontal well" } do |f| %>
+  <fieldset>
+	<legend>Nova movimentação</legend>
+	<%= f.label :value, "Valor" %>
+	<%= f.text_field :value %>
+
+	<%= f.label :description, "Descrição" %>
+	<%= f.text_field :description %>
+
+	<%= f.submit "Salvar", class: "btn btn-success" %>
+  </fieldset>
+<% end %>
+
+<% if @transaction.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-error">
+      The form contains <%= pluralize(@transaction.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @transaction.errors.full_messages.each do |msg| %>
+      <li>* <%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
