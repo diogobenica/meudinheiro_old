@@ -10,6 +10,7 @@ gem 'bootstrap-sass', '~> 2.2.2.0'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'bootswatch-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -19,7 +20,9 @@ end
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
-  gem 'rspec-rails', '2.11.0'
+  gem 'rspec-rails', '>= 2.11.1'
+  gem 'capybara', '>= 2.0.2'
+  gem "ruby-debug19"
 end
 
 group :production do

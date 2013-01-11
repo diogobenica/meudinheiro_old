@@ -8,12 +8,14 @@ class Transaction < ActiveRecord::Base
     super
     @category_id = attributes[:category_id]
     @description = attributes[:description]
-    @transaction_date = attributes[:transaction_date]
+    @transaction_date = Date.parse(attributes[:transaction_date]) if attributes[:transaction_date]
     @user_id = attributes[:user_id]
     @value = attributes[:value]
   end
 
   def transaction_date_is_a_time_object
-    errors.add(:transaction_date, "#{transaction_date} is not a Time object [#{transaction_date.class}]") unless transaction_date.class == Time
+    unless transaction_date.class == Date then
+      errors.add(:transaction_date, "#{transaction_date} is not a Date object [#{transaction_date.class}]")
+    end
   end
 end

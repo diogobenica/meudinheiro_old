@@ -1,0 +1,35 @@
+<div>
+	<h1 class="pull-left">Movimentações</h1>
+	<div class="pull-right">
+		<ul class="pager">
+			<li><a class="action" href="<%= new_transaction_path %>"><i class="icon-plus"></i> Nova</a></li>
+		</ul>
+	</div>
+</div>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+	    	<th>Data</th>
+	    	<th>Descrição</th>
+	    	<th>Valor</th>
+	  	</tr>
+	</thead>
+	<tbody>
+		<% @transactions.each do |transaction| %>
+		<tr>
+	    	<td><%= transaction.transaction_date %></td>
+	    	<td><%= transaction.description %></td>
+	    	<td><%= transaction.value %></td>
+	    </tr>
+	    <% end %>
+	</tbody>
+</table>
+<div class="pagination pagination-centered">
+	<ul>
+	<% @total_pages.times do |page| %>
+		<li <%= raw 'class="active"' if @pg == page+1 %>>
+			<a href="<%= transactions_path %>?pg=<%= page+1 %>"><%= page+1 %></a>
+		</li>	
+	<% end %>
+	</ul>
+</div>
