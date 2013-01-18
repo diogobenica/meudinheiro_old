@@ -1,7 +1,10 @@
 @import "bootswatch/cerulean/variables";
 @import "bootstrap";
+@import "bootstrap-datepicker";
+
 // Bootstrap body padding for fixed navbar
 body { padding-top: 60px; }
+
 @import "bootstrap-responsive";
 @import "bootswatch/cerulean/bootswatch";
 
@@ -15,4 +18,34 @@ body { padding-top: 60px; }
 .pager a.action {
 	color: #555;
 	font-weight: bold;
+}
+
+.last-transactions {
+	font-size: 11px;
+	border-left: none;
+	border-right: none;
+}
+
+.last-transactions td, .last-transactions th {
+	padding: 2px;
+	border-left: none;
+}
+
+.last-transactions-header {
+	background-color: #d8d8d8;
+}
+
+.final_balance {
+	text-align: center !important;
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #ebebeb;
+}
+
+.last-transaction-negative {
+	color: #995555;
+}
+
+.last-transaction-positive {
+	color: #337733;
 }

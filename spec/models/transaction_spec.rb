@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Transaction do
   before do 
-    @transaction = Transaction.new(:category_id => 1, :description => "Test", :transaction_date => Time.now, 
+    @transaction = Transaction.new(:category_id => 1, :description => "Test", :transaction_date => "2012-05-23", 
                             :user_id => 1, :value => 100)
   end
 

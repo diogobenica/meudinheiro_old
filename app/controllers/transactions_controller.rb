@@ -8,7 +8,7 @@ class TransactionsController < ApplicationController
     if @transaction.save
       redirect_to transactions_path
     else
-      flash.now[:error] = @transaction.errors.full_messages
+      flash.now[:error] = @transaction.errors.messages
       render 'new'
     end
   end

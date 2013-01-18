@@ -1,9 +1,9 @@
 <%= form_for @transaction, :html => { :class => "form-horizontal well" } do |f| %>
   <fieldset>
 	<legend>Nova movimentação</legend>
-  <%= print_field f, :text_field, "Valor", :value %>
-  <%= print_field f, :text_field, "Descrição", :description %>
-  <%= print_field f, :text_field, "Data", :transaction_date %>
+	  <%= print_field f, :text_field, "Valor", :value, 'small' %>
+	  <%= print_field f, :text_field, "Descrição", :description %>
+	  <%= print_field f, :text_field, "Data", :transaction_date, 'small' %>
   
 	<%= print_submit f, "Salvar" %>
   </fieldset>
