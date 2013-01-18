@@ -3,8 +3,7 @@
 	<legend>Nova movimentação</legend>
 	  <%= print_field f, :text_field, "Valor", :value, 'small' %>
 	  <%= print_field f, :text_field, "Descrição", :description %>
-	  <%= print_field f, :text_field, "Data", :transaction_date, 'small' %>
-  
+	  <%= print_field f, :text_field, "Data", :transaction_date, 'small date' %>
 	<%= print_submit f, "Salvar" %>
   </fieldset>
 <% end %>

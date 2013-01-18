@@ -15,3 +15,11 @@
 //= require_tree .
 //= require bootstrap
 //= require bootstrap-datepicker
+//= require modernizr
+$( function(){
+	if (Modernizr.inputtypes.date){
+		$('.date').prop('type', 'date');
+	}else{
+		$('.date').datepicker({"format": "dd/mm/yyyy", "weekStart": 1, "autoclose": true, "language": "pt-BR"});
+	}
+});
